@@ -29,27 +29,24 @@
       <div class="right-image">
         <img src="./images/area_of_trinagle.png" alt="area_of_trinagle image" width="250" />
       </div>
-      <br />
-      <div class="page-content">Enter the base and height in cm.</div>
       <div class="page-content-php">
-        <form action="answer.php" method="POST">
-          <div class="mdl-textfield mdl-js-textfield">
-            <input class="mdl-textfield__input" type=" text" pattern="-?[0-9]*(\.[0-9]+)?" name="base-of-triangle">
-            <label class="mdl-textfield__label" for="base-of-triangle">Base of triangle (cm)</label>
-            <span class="mdl-textfield__error">Input is not a number!</span>
-          </div>
-          <br />
-          <div class="mdl-textfield mdl-js-textfield">
-            <input class="mdl-textfield__input" type=" text" pattern="-?[0-9]*(\.[0-9]+)?" name="height-of-triangle">
-            <label class="mdl-textfield__label" for="height-of-triangle">Height of rectangle (cm)</label>
-            <span class="mdl-textfield__error">Input is not a number!</span>
-          </div>
-          <br />
-          <!-- Accent-colored raised button with ripple -->
-          <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" type="submit">
-            Calculate
-          </button>
-        </form>
+        <div id="user-info">
+          <?php
+          $lengthOfRectangle = $_POST["base-of-triangle"];
+          $widthOfRectangle = $_POST["height-of-triangle"];
+
+          // process
+          $area = 0.5 * ($lengthOfRectangle + $widthOfRectangle);
+
+          // output
+          echo "If a rectangle has length = " . $lengthOfRectangle . " cm and the width = " . $widthOfRectangle . " cm:";
+          echo "<br />";
+          echo "<br />";
+          echo "The area of the rectangle is " . $area . " cm².";
+          echo "<br />";
+          echo "The perimeter of the rectangle is " . $perimeter . " cm.";
+          ?>
+        </div>
       </div>
     </main>
   </div>
